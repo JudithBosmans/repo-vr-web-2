@@ -1,0 +1,4 @@
+*.moss.glb filter=lfs diff=lfs merge=lfs -text
+public/assets/**/*.glb filter=lfs diff=lfs merge=lfs -text
+public/assets/**/*.gltf filter=lfs diff=lfs merge=lfs -text
+public/assets/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
