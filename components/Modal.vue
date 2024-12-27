@@ -4,23 +4,22 @@
     class="modal-overlay animate-fade animate-once animate-delay-[20ms]"
     @click.self="close"
   >
-    <div class="modal-content"> 
-
+    <div class="modal-content">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const props = defineProps<{ isVisible: boolean }>();
 const emit = defineEmits<{
-  (event: 'update:isVisible', value: boolean): void;
+  (event: "update:isVisible", value: boolean): void;
 }>();
 
 const close = () => {
-  emit('update:isVisible', false);
+  emit("update:isVisible", false);
 };
 </script>
 
@@ -63,6 +62,6 @@ const close = () => {
 }
 
 .close-button:hover {
-  color: red;
+  color: rgb(255, 255, 255);
 }
 </style>

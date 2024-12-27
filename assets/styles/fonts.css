@@ -15,3 +15,12 @@
   font-style: normal;
   line-height: normal;
 }
+
+.navText {
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.navText:hover {
+  color: red;
+}

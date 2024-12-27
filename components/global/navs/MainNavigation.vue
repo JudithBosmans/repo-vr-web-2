@@ -5,7 +5,7 @@
         <li v-for="post in posts" :key="post.slug" class="pb-1 md:pb-2 lg:pb-3">
           <NuxtLink
             :to="post._path"
-            class="font-bold text-2xl lg:text-5xl xl:text-5xl"
+            class="navText text-2xl lg:text-5xl xl:text-5xl"
           >
             {{ post.title }}
           </NuxtLink>

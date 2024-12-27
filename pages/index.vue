@@ -2,6 +2,8 @@
 import { ref, onMounted } from "vue";
 import Rellax from "rellax";
 import Floating from "./Floating.vue";
+import Flower from "./Flower.vue";
+import About from "./About.vue";
 
 const router = useRouter();
 const homepageSettings = ref(null); // For homepage.json data
@@ -84,7 +86,7 @@ onMounted(async () => {
         ></div> -->
 
         <!-- Content above the background -->
-        <div class="relative z-10 pr-5">
+        <div class="relative z-10 pr-5 bg-transparent">
           <Drawer />
         </div>
 
@@ -93,13 +95,18 @@ onMounted(async () => {
           class="info flex flex-col items-center justify-center h-screen relative"
         >
           <div class="text-center p-1 lg:p-20 titleText">
-            <div
+            <!-- <div
               id="titleHome"
-              class="absolute top-[40%] left-[50%] text-white"
+              class="text-white text-[15vw] text-right leading-[20vh]"
             >
-              <h2>Judith Bosmans</h2>
-            </div>
+              <h2 class="absolute bottom-10 right-10 z-10000">
+                Judith <br />
+                Bosmans
+              </h2>
+            </div> -->
             <Floating />
+            <!-- <Flower class="z-100000" /> -->
+            <About class="w-[100vw] h-[100vh] absolute top-[100vh] left-0" />
           </div>
         </div>
       </div>
@@ -110,10 +117,10 @@ onMounted(async () => {
 <style>
 #titleHome {
   position: absolute;
-  top: 30;
+  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
+  /* z-index: 1000; */
+  width: 100vw;
+  height: 100vh;
 }
 </style>

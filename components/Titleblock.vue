@@ -1,11 +1,11 @@
 <template>
   <div class="opacity-80 animate-fade animate-once animate-delay-[100ms]">
-    <div class="text-2xl font-bold mb-3">
+    <div class="font-bold mb-3">
       <NuxtLink :to="`/`">
         {{ settings.site_title }}
       </NuxtLink>
     </div>
-    <div class="text-sm opacity-80">
+    <div class="text-sm opacity-80 text-gray-300">
       {{ settings.site_subtitle }}
     </div>
   </div>

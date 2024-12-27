@@ -5,7 +5,7 @@
         <div class="flex basis-11/12">
           <ColorMode />
         </div>
-        <div class="flex basis-1/12 p-10">
+        <!-- <div class="flex basis-1/12 p-10">
           <div class="flex-1 basis-5/12 pr-1">
             <NuxtLink to="/">
               <svg
@@ -85,7 +85,7 @@
               </svg>
             </NuxtLink>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
