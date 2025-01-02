@@ -1,18 +1,61 @@
-/* Body element */
+/* BODY */
 body {
-  background-color: #000000;
+  background-color: #2a2829;
   color: rgba(0, 0, 0, 0.8);
 }
+
+.dark-mode body {
+  background-color: #dad1d1;
+}
+
 .light-mode body {
-  background-color: #ffffff;
+  background-color: #dad1d1;
   color: #161717;
 }
+
 .el-drawer {
   background: rgba(255, 255, 255, 0.2) !important;
   backdrop-filter: blur(5px) !important;
   -webkit-backdrop-filter: blur(5px) !important;
   color: white;
 }
+
+/* HAMBURGER MENU */
+
+.dark-mode .iconNav {
+  fill: white;
+}
+
+.dark-mode .iconNav:hover {
+  fill: #31525f;
+}
+
+.light-mode .iconNav {
+  fill: #161717;
+}
+
+.light-mode .iconNav:hover {
+  fill: #31525f;
+}
+
+/* FONT TYPES */
+
+.light-mode .titleText {
+  color: #161717;
+}
+
+.dark-mode .titleText {
+  color: #dcd0be;
+}
+
+.dark-mode .bodyText {
+  color: #dcd0be;
+}
+
+.light-mode .bodyText {
+  color: #161717;
+}
+
 /* */
 .dark-mode body {
   background-color: #161715;
@@ -66,4 +109,8 @@ select {
 .gray-mode input,
 .gray-mode select {
   border: 1px solid rgba(41, 41, 45, 0.8);
+}
+
+.iconNav:hover {
+  fill: red;
 }

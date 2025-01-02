@@ -22,9 +22,9 @@ const loadModel = (path) => {
       if (currentModel.value) {
         scene.remove(currentModel.value);
       }
-      currentModel.value = markRaw(gltf.scene); // Use markRaw to prevent Vue reactivity on Three.js objects
+      currentModel.value = markRaw(gltf.scene);
       currentModel.value.position.set(0, 0, 0);
-      currentModel.value.scale.set(60, 60, 60);
+      currentModel.value.scale.set(1, 1, 1);
       scene.add(currentModel.value);
     },
     undefined,
@@ -73,7 +73,7 @@ watch(
 </script>
 
 <template>
-  <div class="h-[150vh] w-[100vw] absolute top-0 left-0 z-0">
+  <div class="h-[125vh] w-[100%]">
     <div id="moss-container"></div>
   </div>
 </template>

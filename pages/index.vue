@@ -16,8 +16,8 @@ const colorMode = useColorMode();
 
 const modelPath = computed(() =>
   colorMode.preference === "dark"
-    ? "/assets/flower2.glb"
-    : "/assets/flower3.glb"
+    ? "/assets/plantFinal.glb"
+    : "/assets/straw.glb"
 );
 
 onMounted(async () => {
@@ -97,38 +97,35 @@ onMounted(async () => {
         <div
           class="info flex flex-col items-center justify-center h-screen relative"
         >
-          <div class="text-center p-1 lg:p-20 titleText">
+          <div class="text-left p-1 titleText">
             <div id="titleHome" class="titleText">
               <h2
-                class="absolute top-[63vh] left-10 text-left z-10000 font-medium tracking-wide text-[5vw]"
+                class="absolute top-[65%] left-[50%] translate-Y-[-30%] translate-x-[-50%] z-10000"
               >
-                Judith <br />
-                Bosmans
+                <span class="text-[32vw]">Judith</span> <br />
+                <span class="text-[10vw]">Bosmans</span>
               </h2>
             </div>
+
             <Floating
               :ColorMode="ColorMode.preference"
               :modelPath="modelPath"
             />
             <!-- <Flower class="z-100000" /> -->
-            <About
-              id="about"
-              class="w-[100vw] h-[100vh] absolute top-[100vh] left-0"
-            />
+            <About id="about" class="w-[100vw] absolute top-[100vh] left-0" />
           </div>
+        </div>
+        <div class="w-[50%]">
+          <p class="bodyText ml-[2vw] mt-[4vh]">
+            Lorem ipsum dolor sit amet. Qui modi illum ab quod optio est
+            exercitationem aliquid et consequatur quibusdam sed sint ipsa. Sed
+            consequuntur repellendus vel perferendis rerum ad officia architecto
+            aut quos nostrum sed accusantium repellat. Sit facilis fuga qui
+            officiis laborum non fuga quasi? Aut officia illum aut voluptas
+            doloribus eos voluptatum fugiat aut facilis sint et modi vitae.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<style>
-#titleHome {
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* z-index: 1000; */
-  width: 100vw;
-  height: 100vh;
-}
-</style>

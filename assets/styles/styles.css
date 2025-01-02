@@ -1,5 +1,7 @@
-html {
+html,
+body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .main {
   height: auto;
@@ -21,8 +23,4 @@ hr {
 ul,
 li {
   list-style: none;
-}
-
-.iconNav:hover {
-  fill: red;
 }

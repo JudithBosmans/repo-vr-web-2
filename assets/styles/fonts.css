@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Bokor&display=swap");
 
 .titleText {
-  color: white;
-  font-size: 80px;
   font-family: "Helvetica", system-ui;
-  font-weight: 400;
+  font-weight: 800;
   font-style: normal;
-  line-height: normal;
+  line-height: 10vh;
 }
 
 .pageTitle {
@@ -18,11 +16,13 @@
 }
 
 .bodyText {
-  font-size: 18px;
+  font-size: 13px;
   font-family: "Helvetica", sans-serif;
   font-weight: 300;
+
+  letter-spacing: 0.2px;
   font-style: normal;
-  line-height: normal;
+  line-height: 20px;
 }
 
 .navText {

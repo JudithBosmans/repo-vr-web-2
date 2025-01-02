@@ -1,30 +1,27 @@
 <template>
-  <main
-    class="flex items-center justify-center min-h-screen bg-gray-900 text-white"
-  >
-    <section class="w-[85vw] px-6">
-      <div
-        class="flex items-center justify-between flex-wrap gap-6 md:flex-nowrap lg:gap-12"
-      >
+  <main class="flex items-center justify-center h-[70vh]">
+    <section class="w-[85%] px-6">
+      <div class="flex items-center justify-between flex-wrap md:flex-nowrap">
         <!-- Image Section -->
-        <div
-          class="flex items-center flex-col space-x-6 w-full md:w-1/3 lg:w-1/4"
-        >
+        <div class="flex items-center justify-center flex-col w-30%">
           <img
             src="/img/profile.png"
             alt="Profile Picture"
-            class="rounded-full w-[15vw] h-full object-cover"
+            class="rounded-full w-[140px] h-[140px] object-cover"
           />
           <div class="bodyText text-left">
-            <p>Developer / Designer</p>
+            <p>
+              Developer <br />
+              Designer
+            </p>
           </div>
         </div>
 
         <!-- Description Section -->
         <div
-          class="flex flex-col space-y-4 w-full md:flex-grow min-w-[45vw] max-w-[55vw]"
+          class="flex flex-col space-y-4 md:flex-grow min-w-[45vw] max-w-[55vw]"
         >
-          <p class="text-left text-base md:text-lg leading-relaxed mb-[2vh]">
+          <p class="bodyText text-left text-base mb-[2vh]">
             Passionate about creating beautiful and interactive web experiences.
             I love turning complex problems into simple and intuitive designs.
             My goal is to build products that provide value and delight to the
@@ -32,10 +29,10 @@
           </p>
 
           <!-- Skills List -->
-          <ul class="grid grid-cols-2 gap-4 md:grid-cols-3 text-sm">
-            <li class="flex items-center space-x-2">
+          <ul class="bodyText grid grid-cols-2 gap-4 md:grid-cols-3">
+            <li class="flex items-center space-x-5">
               <svg
-                class="w-6 h-6 text-prettyRed"
+                class="w-6 h-6 text-prettyRed mr-2"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -52,7 +49,7 @@
             </li>
             <li class="flex items-center space-x-2">
               <svg
-                class="w-6 h-6 text-prettyRed"
+                class="w-6 h-6 text-prettyRed mr-2"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -69,7 +66,7 @@
             </li>
             <li class="flex items-center space-x-2">
               <svg
-                class="w-6 h-6 text-prettyRed"
+                class="w-6 h-6 text-prettyRed mr-2"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -86,7 +83,7 @@
             </li>
             <li class="flex items-center space-x-2">
               <svg
-                class="w-6 h-6 text-prettyRed"
+                class="w-6 h-6 text-prettyRed mr-2"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -103,7 +100,7 @@
             </li>
             <li class="flex items-center space-x-2">
               <svg
-                class="w-6 h-6 text-prettyRed"
+                class="w-6 h-6 text-prettyRed mr-2"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -120,7 +117,7 @@
             </li>
             <li class="flex items-center space-x-2">
               <svg
-                class="w-6 h-6 text-prettyRed"
+                class="w-6 h-6 text-prettyRed mr-2"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -137,7 +134,7 @@
             </li>
             <li class="flex items-center space-x-2">
               <svg
-                class="w-6 h-6 text-prettyRed"
+                class="w-6 h-6 text-prettyRed mr-2"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
