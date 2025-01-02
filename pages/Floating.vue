@@ -1,73 +1,75 @@
 <script setup>
-import { onMounted } from "vue";
-import { useRouter } from "vue-router";
+import { onMounted, ref, watch, markRaw } from "vue";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
+const props = defineProps({
+  colorMode: String,
+  modelPath: {
+    type: String,
+    required: true,
+  },
+});
+
+let scene, camera, renderer;
+const currentModel = ref(null);
+
+const loadModel = (path) => {
+  const loader = new GLTFLoader();
+  loader.load(
+    path,
+    (gltf) => {
+      if (currentModel.value) {
+        scene.remove(currentModel.value);
+      }
+      currentModel.value = markRaw(gltf.scene); // Use markRaw to prevent Vue reactivity on Three.js objects
+      currentModel.value.position.set(0, 0, 0);
+      currentModel.value.scale.set(60, 60, 60);
+      scene.add(currentModel.value);
+    },
+    undefined,
+    (error) => console.error("Error loading model:", error)
+  );
+};
+
 onMounted(() => {
-  const router = useRouter();
-
-  // Create the Three.js scene
-  const scene = new THREE.Scene();
-
-  // Create a camera
-  const camera = new THREE.PerspectiveCamera(
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
     0.1,
     1000
   );
   camera.position.z = 5;
-
-  // Create the WebGL renderer
-  const renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer = new THREE.WebGLRenderer({ alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.getElementById("moss-container").appendChild(renderer.domElement);
 
-  // Add ambient light
   const ambientLight = new THREE.AmbientLight(0xffffff, 1);
   scene.add(ambientLight);
 
-  // Add directional light
   const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
   directionalLight.position.set(10, 10, 10);
   scene.add(directionalLight);
 
-  // Load the GLB model
-  const loader = new GLTFLoader();
-  loader.load(
-    "/assets/flower4.glb",
-    (gltf) => {
-      const model = gltf.scene;
-      model.position.set(0, 0, 0);
-      model.scale.set(0.1, 0.1, 0.1);
-      scene.add(model);
+  loadModel(props.modelPath);
 
-      // Animation loop
-      const animate = () => {
-        requestAnimationFrame(animate);
-
-        // Float effect
-        model.position.y = Math.sin(Date.now() * 0.001) * 0.2;
-
-        renderer.render(scene, camera);
-      };
-
-      animate();
-    },
-    undefined,
-    (error) => {
-      console.error("Error loading GLB model:", error);
+  const animate = () => {
+    requestAnimationFrame(animate);
+    if (currentModel.value) {
+      currentModel.value.position.y = Math.sin(Date.now() * 0.001) * 0.2;
     }
-  );
-
-  // Handle window resize
-  window.addEventListener("resize", () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
+    renderer.render(scene, camera);
+  };
+  animate();
 });
+
+watch(
+  () => props.modelPath,
+  (newPath) => {
+    loadModel(newPath);
+  }
+);
 </script>
 
 <template>

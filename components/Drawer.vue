@@ -1,18 +1,19 @@
 <template>
   <div class="flex animate-fade animate-once animate-delay-[500ms]">
     <div class="flex-auto w-1 pt-3"></div>
-    <div class="flex-row pt-5 justify-end">
+    <!-- Parent container with relative positioning -->
+    <div class="flex-row pt-5 justify-end relative">
+      <!-- Sticky button -->
       <button
-        style="margin-left: 16px"
         @click="drawer = true"
-        class="bg-opacity-20 hover:bg-opacity-90 dark:bg-opacity-10"
+        class="bg-opacity-20 hover:bg-opacity-90 dark:bg-opacity-10 sticky top-4"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1.5em"
           height="1.5em"
           viewBox="0 0 24 24"
-          style="margin: 3vw 3vh"
+          class="m-4"
         >
           <path
             class="iconNav"
@@ -34,8 +35,13 @@
     <div class="flex flex-col h-full">
       <div class="flex justify-center items-center h-full w-full">
         <div class="text-center">
-          <!-- <Navigations /> -->
-          <NavItems />
+          <button
+            @click="navigateToAbout"
+            class="text-2xl lg:text-5xl navText cursor-pointer"
+          >
+            About
+          </button>
+          <Navigations />
         </div>
       </div>
       <div class="mt-auto footer">
@@ -49,9 +55,19 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import type { DrawerProps } from "element-plus";
-import NavItems from "./NavItems.vue";
+import Navigations from "./Navigations.vue";
+import { useRouter } from "vue-router";
+
 const drawer = ref(false);
 const direction = ref<DrawerProps["direction"]>("rtl");
+
+const router = useRouter();
+
+const navigateToAbout = () => {
+  router.push({ path: "/", hash: "#about" }).then(() => {
+    drawer.value = false;
+  });
+};
 </script>
 
 <style>

@@ -4,22 +4,25 @@ import Rellax from "rellax";
 import Floating from "./Floating.vue";
 import Flower from "./Flower.vue";
 import About from "./About.vue";
+import ColorMode from "~/components/ColorMode.vue";
 
 const router = useRouter();
 const homepageSettings = ref(null); // For homepage.json data
 const generalSettings = ref(null); // For settings.json data
 
 const isLoading = ref(true); // Loading state
-const hasError = ref(false); // Error state
+const hasError = ref(false); // Error stateconst
+const colorMode = useColorMode();
 
-// For typewriter effect
-const displayedTitle = ref(""); // Title animation
-const displayedSubtitle = ref(""); // Subtitle animation
-const displayedCopyright = ref(""); // Copyright animation
-const typingSpeed = 20; // Speed of typewriter effect
+const modelPath = computed(() =>
+  colorMode.preference === "dark"
+    ? "/assets/flower2.glb"
+    : "/assets/flower3.glb"
+);
 
 onMounted(async () => {
   const rellax = new Rellax(".rellax");
+
   try {
     // Fetch homepage.json
     const homepageResponse = await fetch("/_data/homepage.json");
@@ -40,16 +43,17 @@ onMounted(async () => {
     }
     generalSettings.value = await settingsResponse.json();
 
-    if (homepageSettings.value.homepageredirect == "") {
-    } else {
-      if (homepageSettings.value.homepageredirect) {
-        const redirectPath = homepageSettings.value.homepageredirect
-          ? `/page/${homepageSettings.value.homepageredirect}`
-          : null;
+    // Handle redirection
+    // if (homepageSettings.value.homepageredirect) {
+    //   const redirectPath = `/page/${homepageSettings.value.homepageredirect}`;
+    //   router.push(redirectPath);
+    // }
 
-        if (redirectPath) {
-          router.push(redirectPath);
-        }
+    // Scroll to section if hash is present
+    if (window.location.hash === "#about") {
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: "smooth" });
       }
     }
 
@@ -85,7 +89,6 @@ onMounted(async () => {
           }"
         ></div> -->
 
-        <!-- Content above the background -->
         <div class="relative z-10 pr-5 bg-transparent">
           <Drawer />
         </div>
@@ -95,18 +98,23 @@ onMounted(async () => {
           class="info flex flex-col items-center justify-center h-screen relative"
         >
           <div class="text-center p-1 lg:p-20 titleText">
-            <!-- <div
-              id="titleHome"
-              class="text-white text-[15vw] text-right leading-[20vh]"
-            >
-              <h2 class="absolute bottom-10 right-10 z-10000">
+            <div id="titleHome" class="titleText">
+              <h2
+                class="absolute top-[63vh] left-10 text-left z-10000 font-medium tracking-wide text-[5vw]"
+              >
                 Judith <br />
                 Bosmans
               </h2>
-            </div> -->
-            <Floating />
+            </div>
+            <Floating
+              :ColorMode="ColorMode.preference"
+              :modelPath="modelPath"
+            />
             <!-- <Flower class="z-100000" /> -->
-            <About class="w-[100vw] h-[100vh] absolute top-[100vh] left-0" />
+            <About
+              id="about"
+              class="w-[100vw] h-[100vh] absolute top-[100vh] left-0"
+            />
           </div>
         </div>
       </div>

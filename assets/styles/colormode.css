@@ -4,11 +4,14 @@ body {
   color: rgba(0, 0, 0, 0.8);
 }
 .light-mode body {
-  background-color: #000000;
+  background-color: #ffffff;
   color: #161717;
 }
 .el-drawer {
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  color: white;
 }
 /* */
 .dark-mode body {
@@ -18,23 +21,17 @@ body {
 .dark-mode .backcolor {
   background-color: #161715;
 }
-.dark-mode .el-drawer {
-  background-color: rgba(30, 30, 30, 0.5);
-}
-/* */
+
 .gray-mode body {
   background-color: #bbbcb1;
   color: #251603ef;
 }
 .gray-mode .backcolor {
   background-color: rgba(20, 20, 20, 0.5);
-
-  color: #ffffff;
 }
 
 .gray-mode .el-drawer {
   background-color: rgba(0, 0, 0, 0.5);
-  color: #ebebeb;
 }
 
 /* Active link */
