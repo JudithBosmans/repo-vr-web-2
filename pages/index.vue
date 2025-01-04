@@ -15,9 +15,7 @@ const hasError = ref(false); // Error stateconst
 const colorMode = useColorMode();
 
 const modelPath = computed(() =>
-  colorMode.preference === "dark"
-    ? "/assets/plantFinal.glb"
-    : "/assets/straw.glb"
+  colorMode.preference === "dark" ? "/assets/flower4.glb" : "/assets/straw.glb"
 );
 
 onMounted(async () => {
