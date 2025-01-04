@@ -1,6 +1,6 @@
 [build]
   command = "npm run build" 
-  publish = "dist"  # or '.output/public' for Nuxt 3
+  publish = ".output/public" 
 
 [build.environment]
   NODE_VERSION = "16"  
