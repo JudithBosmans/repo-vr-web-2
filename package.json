@@ -28,7 +28,8 @@
     "rellax": "^1.12.1",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-animated": "^1.1.2",
-    "three": "^0.170.0",
+    "three": "^0.172.0",
+    "three-gltf-loader": "^1.111.0",
     "vue-chartjs": "^5.3.1",
     "vue-parallaxy": "^1.1.1"
   }
