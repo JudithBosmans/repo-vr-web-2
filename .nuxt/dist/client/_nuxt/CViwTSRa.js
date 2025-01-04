@@ -1,0 +1,1 @@
+import{_ as a,c as s,a as t,$ as n,o}from"./BMKAczWz.js";const c={},r={class:"animate-fade animate-once animate-delay-[500ms]"};function d(e,l){return o(),s("div",null,[t("div",r,[n(e.$slots,"default")])])}const i=a(c,[["render",d]]);export{i as default};
