@@ -22,7 +22,7 @@
             </NuxtLink>
           </div>
 
-          <div class="flex-1 basis-5/12 pr-1">
+          <!-- <div class="flex-1 basis-5/12 pr-1">
             <NuxtLink to="/search">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@
                 ></path>
               </svg>
             </NuxtLink>
-          </div>
+          </div> -->
 
           <div class="flex-1 basis-5/12 pr-1 text-right">
             <NuxtLink to="https://github.com/bureaupixel/" target="_blank">
