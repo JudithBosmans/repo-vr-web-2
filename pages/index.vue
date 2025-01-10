@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import Rellax from "rellax";
-import Floating from "./Floating.vue";
-import Flower from "./Flower.vue";
-import About from "./About.vue";
+import Floating from "../components/Home/Floating.vue";
+import Flower from "../components/Home/Flower.vue";
+import About from "../components/Home/About.vue";
 import ColorMode from "~/components/ColorMode.vue";
 
 const router = useRouter();
@@ -15,7 +15,9 @@ const hasError = ref(false); // Error stateconst
 const colorMode = useColorMode();
 
 const modelPath = computed(() =>
-  colorMode.preference === "dark" ? "/assets/flower4.glb" : "/assets/straw.glb"
+  colorMode.preference === "dark"
+    ? "/assets/strawberry.glb"
+    : "/assets/magnolia.glb"
 );
 
 onMounted(async () => {

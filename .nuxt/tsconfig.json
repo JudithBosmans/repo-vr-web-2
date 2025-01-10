@@ -2,6 +2,12 @@
 {
   "compilerOptions": {
     "paths": {
+      "nitropack/types": [
+        "../node_modules/nitropack/types"
+      ],
+      "nitropack/runtime": [
+        "../node_modules/nitropack/runtime"
+      ],
       "nitropack": [
         "../node_modules/nitropack"
       ],
@@ -44,6 +50,9 @@
       "nuxt": [
         "../node_modules/nuxt"
       ],
+      "vite/client": [
+        "../node_modules/vite/client"
+      ],
       "~": [
         ".."
       ],
@@ -68,6 +77,9 @@
       "@@/*": [
         "../*"
       ],
+      "#shared": [
+        "../shared"
+      ],
       "assets": [
         "../assets"
       ],
@@ -79,6 +91,12 @@
       ],
       "public/*": [
         "../public/*"
+      ],
+      "#build": [
+        "."
+      ],
+      "#build/*": [
+        "./*"
       ],
       "#app": [
         "../node_modules/nuxt/dist/app"
@@ -114,13 +132,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/dev.json"
-      ],
-      "#build": [
-        "."
-      ],
-      "#build/*": [
-        "./*"
+        "./manifest/meta/dev"
       ],
       "#components": [
         "./components"
@@ -138,7 +150,7 @@
     "noUncheckedIndexedAccess": false,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
-    "module": "ESNext",
+    "module": "preserve",
     "noEmit": true,
     "lib": [
       "ESNext",
@@ -184,6 +196,16 @@
     "../dist",
     "../node_modules",
     "../node_modules/nuxt/node_modules",
+    "../node_modules/@nuxtjs/tailwindcss/node_modules",
+    "../node_modules/@nuxtjs/mdc/node_modules",
+    "../node_modules/@nuxt/content/node_modules",
+    "../node_modules/@nuxtjs/color-mode/node_modules",
+    "../node_modules/@element-plus/nuxt/node_modules",
+    "../node_modules/@nuxt/image/node_modules",
+    "../node_modules/@stefanobartoletti/nuxt-social-share/node_modules",
+    "../node_modules/nuxt-lazy-load/node_modules",
+    "../node_modules/@nuxt/devtools/node_modules",
+    "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
     "../node_modules/@nuxtjs/tailwindcss/dist/runtime/server",
     "../node_modules/@nuxtjs/mdc/runtime/server",
