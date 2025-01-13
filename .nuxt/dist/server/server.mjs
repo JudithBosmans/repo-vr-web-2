@@ -658,7 +658,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-B_MtG9q8.js")
+    component: () => import("./_nuxt/index-BiFuDXNB.js")
   },
   {
     name: "page-slug",

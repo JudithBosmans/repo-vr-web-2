@@ -2369,7 +2369,7 @@ function _expandFromEnv(value) {
 const _inlineRuntimeConfig = {
   "app": {
     "baseURL": "/",
-    "buildId": "613d9bc4-98c6-4d48-8d0d-9db2490ef782",
+    "buildId": "bbcc77b3-f5c2-4cd1-b9c0-3e5789d3cb19",
     "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
@@ -2379,7 +2379,7 @@ const _inlineRuntimeConfig = {
       "/__nuxt_error": {
         "cache": false
       },
-      "/api/_content/search-1736698018789": {
+      "/api/_content/search-1736784316045": {
         "prerender": true,
         "headers": {
           "Content-Type": "text/plain"
@@ -2448,7 +2448,7 @@ const _inlineRuntimeConfig = {
     "content": {
       "locales": [],
       "defaultLocale": "",
-      "integrity": 1736698018789,
+      "integrity": 1736784316045,
       "experimental": {
         "stripQueryParameters": false,
         "advanceQuery": false,
@@ -3837,8 +3837,8 @@ const handlers = [
   { route: '/api/_content/query/:qid/**:params', handler: _IyNiRi, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query/:qid', handler: _IyNiRi, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query', handler: _IyNiRi, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/cache.1736698018789.json', handler: _sSc2Uy, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/search-1736698018789', handler: _bPuD6t, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/cache.1736784316045.json', handler: _sSc2Uy, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/search-1736784316045', handler: _bPuD6t, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid/**:params', handler: _1EVwOk, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid', handler: _1EVwOk, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation', handler: _1EVwOk, lazy: false, middleware: false, method: "get" },

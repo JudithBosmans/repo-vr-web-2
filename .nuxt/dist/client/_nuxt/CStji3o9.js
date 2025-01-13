@@ -1,0 +1,1 @@
+import{_ as a,o as s,c as t,a as n,a9 as o}from"./C1QY5MzJ.js";const c={},r={class:"animate-fade animate-once animate-delay-[500ms]"};function d(e,l){return s(),t("div",null,[n("div",r,[o(e.$slots,"default")])])}const i=a(c,[["render",d]]);export{i as default};

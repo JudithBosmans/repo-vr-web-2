@@ -1,11 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: true,
   nitro: {
-    output: {
-      publicDir: "dist",
-    },
+    publicAssets: [
+      {
+        baseURL: "/",
+        dir: "public",
+      },
+    ],
   },
+  ssr: true,
 
   modules: [
     "@nuxtjs/tailwindcss",

@@ -1,0 +1,8 @@
+/api/_content/search-1736783641943
+  Content-Type: text/plain
+/_nuxt/builds/meta/*
+  cache-control: public, max-age=31536000, immutable
+/_nuxt/builds/*
+  cache-control: public, max-age=1, immutable
+/_nuxt/*
+  cache-control: public, max-age=31536000, immutable
